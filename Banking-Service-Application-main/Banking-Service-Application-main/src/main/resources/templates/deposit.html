@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<h1>deposit page</h1>
+<form action="#" th:action="@{/deposit}" th:object="${deposit}" method="post" >
+    <div class="form-group">
+        <input type="hidden" th:field="*{id}">
+        <label for="username">Deposit amount:</label>
+        <input type="number" class="form-control" placeholder="Enter amount" th:field="*{balance}" id="username" name="deposit">
+    </div>
+    <button type="submit" class="btn btn-primary">Deposit</button>
+</form>
+</body>
+</html>

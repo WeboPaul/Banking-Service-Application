@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Withdraw</title>
+  <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<h1>Withdraw page</h1>
+<form action="#" th:action="@{/withdraw}" th:object="${withdraw}" method="post" >
+  <div class="form-group">
+    <input type="hidden" th:field="*{id}">
+    <label for="username">Withdraw amount:</label>
+    <input type="number" class="form-control" placeholder="Enter amount" th:field="*{balance}" id="username" name="withdraw">
+  </div>
+  <button type="submit" class="btn btn-primary">Withdraw</button>
+</form>
+</body>
+</html>

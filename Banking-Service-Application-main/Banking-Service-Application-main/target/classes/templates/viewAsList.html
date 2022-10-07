@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Users as List</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <table>
+        <thead>
+        <tr>
+            <th>UserName</th>
+            <th>FullName</th>
+            <th>Role</th>
+            <th>Balance</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody th:each="user :${users}">
+        <tr>
+            <td th:text="${user.username}">Username</td>
+            <td th:text="${user.firstName + ' '+ user.lastName}">Full name</td>
+            <td th:text="${user.role}">Role</td>
+            <td th:text="${user.balance}">Balance</td>
+            <td><a class="btn btn-danger" th:href="@{/view/{id}(id=${user.id})}">View in details</a></td>
+        </tr>
+        </tbody>
+
+    </table>
+</div>
+</body>
+</html>

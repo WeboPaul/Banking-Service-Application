@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View as story</title>
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>Username</h1><p th:text="${story.username}">Username</p>
+   <h1>Fullname</h1> <p th:text="${story.firstName+' '+story.lastName}">Full name</p>
+   <h1>Role:</h1> <p th:text="${story.role}"></p>
+   <h1>Balance: </h1> <p th:text="${story.balance}">Balance</p>
+    <a th:href="@{/withdraw/{id}(id=${story.id})}" class="btn btn-success">Withdraw</a>
+    <a th:href="@{/deposit/{id}(id=${story.id})}" class="btn btn-success">Deposit</a>
+    <a class="btn btn-primary" th:href="@{/update/{id}(id=${story.id})}">Update</a>
+    <a class="btn btn-primary" th:href="@{/delete/{id}(id=${story.id})}">delete</a>
+    <a th:href="@{/logout}">Logout</a>
+</div>
+</body>
+</html>
